@@ -21,10 +21,10 @@
     "/oclif.manifest.json"
   ],
   "scripts": {
-    "build": "rm -rf dist && tsc -b",
+    "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint . --ext .ts",
     "prepack": "npm run build && oclif manifest && oclif readme",
-    "postpack": "rm -f oclif.manifest.json",
+    "postpack": "shx rm -f oclif.manifest.json",
     "prepare": "npm run build",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "posttest": "npm run lint",
